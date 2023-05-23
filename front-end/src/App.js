@@ -30,12 +30,19 @@ import Hero from './components/Hero';
 import ErrorBoundary from './components/ErrorBoundary';
 import ClickCounter from './components/ClickCounter';
 import HoverCounter from './components/HoverCounter';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import User from './components/User';
+import CounterProps from './components/CounterProps';
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/userContext';
 
 function App() {
   return (
     <div className="App">
-      <HoverCounter />
-      <ClickCounter name='Abigail' />
+      <UserProvider value="Abigail">
+        <ComponentC />
+      </UserProvider>
     </div>
   );
 }
@@ -85,3 +92,18 @@ export default App;
       {/* <FocusInput /> */}
       {/* <RefsDemo /> */}
       {/* <ParentComp /> */}
+      {/* <CounterProps>
+        {(count, incrementCount) => (
+          <ClickCounterTwo count={count} incrementCount={incrementCount} />
+        )}
+      </CounterProps>
+      <CounterProps>
+        {(count, incrementCount) => (
+          <HoverCounterTwo count={count} incrementCount={incrementCount} />
+        )}
+      </CounterProps> */}
+      {/* <ClickCounterTwo />
+      <HoverCounterTwo />
+      <User render={ (isLoggedIn) => isLoggedIn ? 'Abigail' : 'Guest'} /> */}
+      {/* <HoverCounter />
+      <ClickCounter name='Abigail' /> */}
